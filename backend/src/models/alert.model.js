@@ -21,3 +21,5 @@ const alertSchema = new mongoose.Schema(
   },
   { timestamps: true },
 );
+
+export const Alert = mongoose.model("Alert", alertSchema);
