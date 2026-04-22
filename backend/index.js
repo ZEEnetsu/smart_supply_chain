@@ -6,11 +6,12 @@ import eventRoutes from './src/routes/event.routes.js';
 import alertRoutes from './src/routes/alert.routes.js';
 import routeRoutes from './src/routes/route.routes.js';
 import { errorHandler } from './src/middleware/errorHandler.js';
+import { startDisruptionJob } from './src/jobs/disruption.job.js';
 
 const app = express();
 
-app.use(cors({ origin: process.env.FRONTEND_URL || '*' }));
 app.use(express.json());
+app.use(cors({ origin: process.env.FRONTEND_URL || '*' }));
 
 app.use('/api/events',  eventRoutes);
 app.use('/api/alerts',  alertRoutes);
@@ -25,5 +26,6 @@ app.get('/',(req,res)=>{
 connectDB().then(() => {
   app.listen(process.env.PORT || 5000, () => {
     console.log(`Server on port ${process.env.PORT || 5000}`);
+    startDisruptionJob();
   });
 });

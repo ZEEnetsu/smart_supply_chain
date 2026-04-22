@@ -9,7 +9,7 @@ const shipmentEventSchema = new mongoose.Schema(
     },
     type: {
       type: String,
-      enum: ["DELAY", "DEPARTED", "ARRIVED", "WEATHER", "CUTOMES", "BREAKDOWN"],
+      enum: ["DELAY", "DEPARTED", "ARRIVED", "WEATHER", "CUSTOMS", "BREAKDOWN"],
       required: true,
     },
     location: { type: String, required: true },

@@ -24,8 +24,8 @@ const connectionSchema = new mongoose.Schema(
 
 const routeNodeSchema = new mongoose.Schema(
   {
-    routeName: { type: String, required: true, unique: true, index: true },
-    type: { type: String, enum: ["airport", "hub", "warehouse", "port"] },
+    name: { type: String, required: true, unique: true, index: true },
+    type: { type: String, enum: ["airport", "hub", "warehouse", "port"] , required:true},
     city: { type: String, required: true },
     state: { type: String },
     connections: { type: [connectionSchema], default: [] },
