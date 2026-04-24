@@ -39,7 +39,7 @@ export default function ReroutePanel() {
 
       {/* Header */}
       <div>
-        <h2 className="text-base font-semibold text-gray-800">
+        <h2 className="text-base font-semibold text-zinc-400">
           Reroute recommendation
         </h2>
         <p className="text-xs text-gray-400 mt-0.5 font-mono">
@@ -48,33 +48,33 @@ export default function ReroutePanel() {
       </div>
 
       {/* Disruption summary */}
-      <div className="rounded-lg bg-red-50 border border-red-200 p-3">
-        <p className="text-xs font-semibold text-red-700 mb-1">
+      <div className="rounded-lg text-red-400 bg-red-200/10 border border-red-400 p-3">
+        <p className="text-xs font-semibold mb-1">
           Disruption detected
         </p>
-        <p className="text-xs text-red-600">
+        <p className="text-xs">
           {alert.reason}
         </p>
         {alert.disruptedEdge?.from && (
-          <p className="text-xs text-red-500 mt-1">
+          <p className="text-xs mt-1">
             Blocked at: <span className="font-medium">{alert.disruptedEdge.from}</span>
           </p>
         )}
       </div>
 
       {/* Suggested path */}
-      <div className="rounded-lg bg-green-50 border border-green-200 p-3">
-        <p className="text-xs font-semibold text-green-700 mb-2">
+      <div className="rounded-lg bg-zinc-800  p-3">
+        <p className="text-xs font-semibold text-zinc-400 mb-2">
           Suggested reroute
         </p>
         <div className="flex items-center gap-1 flex-wrap">
           {alert.suggestedPath.map((hub, i) => (
             <span key={hub} className="flex items-center gap-1">
-              <span className="text-xs bg-white border border-green-200 px-2 py-1 rounded-md text-green-800 font-medium">
+              <span className="text-xs px-2 py-1 rounded-md text-green-300 font-medium">
                 {hub}
               </span>
               {i < alert.suggestedPath.length - 1 && (
-                <span className="text-green-400 text-sm">→</span>
+                <span className="text-zinc-400 text-sm">→</span>
               )}
             </span>
           ))}
@@ -85,7 +85,7 @@ export default function ReroutePanel() {
           {alert.originalPathHours && (
             <div>
               <p className="text-xs text-gray-400">Original</p>
-              <p className="text-sm font-semibold text-gray-700">
+              <p className="text-sm font-semibold text-zinc-500">
                 {alert.originalPathHours} hrs
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function ReroutePanel() {
           {alert.suggestedPathHours && (
             <div>
               <p className="text-xs text-gray-400">Reroute</p>
-              <p className="text-sm font-semibold text-green-700">
+              <p className="text-sm font-semibold text-zinc-500">
                 {alert.suggestedPathHours} hrs
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function ReroutePanel() {
           {timeSaved !== null && (
             <div>
               <p className="text-xs text-gray-400">Delta</p>
-              <p className={`text-sm font-semibold ${timeSaved >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+              <p className={`text-sm font-semibold ${timeSaved >= 0 ? 'text-green-300' : 'text-red-400'}`}>
                 {timeSaved >= 0 ? '-' : '+'}{Math.abs(timeSaved)} hrs
               </p>
             </div>
