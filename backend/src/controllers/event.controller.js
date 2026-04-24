@@ -1,5 +1,5 @@
-import { asyncHandler } from '../utils/asyncHandler.js';
-import { ingestEvent, getShipmentTimeline } from '../services/event.service.js';
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ingestEvent, getShipmentTimeline } from "../services/event.service.js";
 
 export const ingest = asyncHandler(async (req, res) => {
   const event = await ingestEvent(req.body);

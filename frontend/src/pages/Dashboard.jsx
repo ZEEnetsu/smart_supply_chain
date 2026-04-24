@@ -6,12 +6,12 @@ import ReroutePanel from '../components/ReroutePanel.jsx';
 
 export default function Dashboard() {
   return (
-    <div className="h-screen flex flex-col bg-gray-50 overflow-hidden">
+    <div className="h-screen flex flex-col bg-zinc-900 overflow-hidden">
 
       {/* Top nav */}
-      <header className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between flex-shrink-0">
+      <header className="border-b border-gray-200 px-6 py-3 flex items-center justify-between shrink-0">
         <div>
-          <h1 className="text-lg font-semibold text-gray-900">
+          <h1 className="text-lg font-semibold text-zinc-300">
             Supply chain monitor
           </h1>
           <p className="text-xs text-gray-400">

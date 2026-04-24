@@ -23,11 +23,11 @@ export default function AlertFeed() {
   });
 
   return (
-    <div className="flex flex-col h-full border rounded-2xl m-2">
+    <div className="flex flex-col h-full border rounded-2xl m-2 bg-zinc-800">
 
       {/* Header */}
       <div className="px-4 pt-4 pb-2">
-        <h2 className="text-base font-semibold text-gray-800">
+        <h2 className="text-base font-semibold text-zinc-300">
           Disruption alerts
         </h2>
         <p className="text-xs text-gray-400 mt-0.5">
@@ -42,10 +42,10 @@ export default function AlertFeed() {
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`
-              text-xs px-3 py-1 rounded-full border transition-colors capitalize
+              text-xs px-3 py-1 rounded-full border transition-colors capitalize cursor-pointer
               ${activeTab === tab
-                ? 'bg-gray-800 text-white border-gray-800'
-                : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400'}
+                ? 'bg-blue-900 text-white border-gray-800'
+                : 'bg-zinc-700 text-zinc-400 border-zinc-800 hover:border-gray-600'}
             `}
           >
             {tab}
